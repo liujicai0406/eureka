@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: eureka
+server:
+  port: 8601
+eureka:
+  instance:
+    hostname: 129.204.194.53
+    prefer-ip-address: true
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

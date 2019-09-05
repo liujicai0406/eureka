@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: eureka
+server:
+  port: 8601
+eureka:
+  instance:
+    hostname:  eureka1 #peer1
+    prefer-ip-address: true # 需要在客户端添加来映射id。服务器加不加效果表面上没有区别
+    ip-address: 10.0.0.41
+  client:
+    #register-with-eureka: false
+    #fetch-registry: false
+    service-url:
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://10.0.0.35:8601/eureka/
+
+logging:
+  config: classpath:log/logback-spring.xml
